@@ -3,7 +3,7 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Short essays, rants, and observations on AI alignment, philosophy, and everything I find cool.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://myreponame.github.io" # the base hostname & protocol for your site
+url: "https://ethereal-firmament.github.io" # the base hostname & protocol for your site
 
 # Build settings
 theme: minima

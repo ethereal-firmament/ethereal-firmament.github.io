@@ -1,14 +1,20 @@
 title: The EF Research Log
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Short essays, rants, and observations on AI alignment, philosophy, and everything I find cool.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ethereal-firmament.github.io" # the base hostname & protocol for your site
+description: >-
+  Field notes on the alignment problem, stoic philosophy, and the mathematics of wealth. A digital commonplace book.
+baseurl: ""
+url: "https://ethereal-firmament.github.io"
 
 # Build settings
 theme: minima
 
-# Exclude from processing.
-# The `vendor/` directories are usually excluded by default.
+# Typography & aesthetics (Minima overrides if supported, or just for your ref)
+# We'll handle the visual "jazz" in the CSS/layout, but this sets the tone.
+header_pages:
+  - about.md
+
+# Exclude from processing
 exclude:
   - .github/
+  - Gemfile
+  - Gemfile.lock

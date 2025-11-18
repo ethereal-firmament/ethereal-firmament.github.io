@@ -1,19 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to my Page</h1>
-    <p>This is a simple text placeholder to prove the site is working.</p>
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<div class="home">
+  <!-- The main title and description defined in _config.yml -->
+  <h1 class="page-heading">{{ site.title }}</h1>
+  <p class="site-description">{{ site.description }}</p>
+
+  <h2 class="post-list-heading">Recent Posts</h2>
+  
+  <!-- This is the loop that Jekyll uses to automatically list your posts -->
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {% if post.excerpt %}
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  <!-- A message if no posts are found -->
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div>

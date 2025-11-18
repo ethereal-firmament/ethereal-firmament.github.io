@@ -4,29 +4,32 @@ title: Home
 ---
 
 <div class="home">
-  <!-- The main title and description defined in _config.yml -->
-  <h1 class="page-heading">{{ site.title }}</h1>
-  <p class="site-description">{{ site.description }}</p>
 
-  <h2 class="post-list-heading">Recent Posts</h2>
-  
-  <!-- This is the loop that Jekyll uses to automatically list your posts -->
+  <header class="hero-section">
+    <h1 class="page-heading">{{ site.title }}</h1>
+    <p class="site-description">{{ site.description }}</p>
+  </header>
+
   <ul class="post-list">
     {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      {% if post.excerpt %}
-        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
-      {% endif %}
-    </li>
+      <li>
+        <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 
-  <!-- A message if no posts are found -->
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <div class="footer-subscribe">
+    <p>feeds: <a href="{{ "/feed.xml" | relative_url }}">rss</a></p>
+  </div>
+
 </div>

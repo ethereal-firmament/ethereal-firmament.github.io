@@ -1,0 +1,101 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+/**
+ * Jazzing it up: "The Intellectual Dark Web" Aesthetic
+ */
+
+// 1. Typography Overrides
+// Use system fonts but prioritize elegant serifs for headers
+$header-font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $body-font-family;
+  color: #111;
+  background-color: #fdfdfd; // Slightly off-white, easier on eyes
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+  font-weight: 700;
+  letter-spacing: -0.02em; // Tighter tracking for a modern look
+}
+
+// 2. The "Hero" Section on Home
+.hero-section {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+
+  .page-heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .site-description {
+    font-family: $body-font-family;
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+// 3. Post List Styling
+.post-list {
+  li {
+    margin-bottom: 2.5rem;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    
+    a {
+      color: #111;
+      text-decoration: none;
+      background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 0.2em;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+      
+      &:hover {
+        background-size: 100% 88%;
+        color: #000;
+      }
+    }
+  }
+
+  .post-meta {
+    font-family: $body-font-family;
+    font-size: 0.85rem;
+    color: #828282;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .post-excerpt {
+    color: #444;
+    line-height: 1.6;
+  }
+}
+
+// 4. Footer Subscribe
+.footer-subscribe {
+  margin-top: 4rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+  
+  a {
+    color: #666;
+    text-decoration: underline;
+  }
+}
